@@ -30,7 +30,7 @@ public class SavingsAccount extends Account {
         if (var1 > 0.0 && this.getBalance() - var1 > 1000.0) {
             return super.debit(var1);
         } else {
-            System.out.println("Amount exceeded balance");
+            System.out.println("\nAmount exceeded balance");
             return this.getBalance();
         }
     }
@@ -40,7 +40,7 @@ public class SavingsAccount extends Account {
             super.debit(var2);
             var1.credit(var2);
         } else {
-            System.out.println("Amount exceeded balance");
+            System.out.println("\nAmount exceeded balance");
         }
 
         return this.getBalance();

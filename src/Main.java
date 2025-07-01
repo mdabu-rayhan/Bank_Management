@@ -18,20 +18,20 @@ public class Main {
             System.out.println("4. Transfer");
             System.out.println("5. Show Account Info");
             System.out.println("6. Exit");
-            System.out.print("Choose an option: ");
+            System.out.print("\nChoose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             if (choice == 1) {
-                System.out.println("Select Account Type:");
+                System.out.println("\nSelect Account Type:");
                 System.out.println("1. Savings Account");
                 System.out.println("2. Current Account");
                 System.out.println("3. Fixed Deposit");
-                System.out.print("Enter type: ");
+                System.out.print("\nEnter type: ");
                 int type = scanner.nextInt();
                 scanner.nextLine();
 
-                System.out.print("Enter account id: ");
+                System.out.print("\nEnter account id: ");
                 String id = scanner.nextLine();
                 System.out.print("Enter account name: ");
                 String name = scanner.nextLine();
@@ -49,24 +49,24 @@ public class Main {
                 } else if (type == 3) {
                     acc = new FixedDeposit(id, name, password, initialBalance);
                 } else {
-                    System.out.println("Invalid account type.");
+                    System.out.println("\nInvalid account type.");
                 }
 
                 if (acc != null) {
                     accounts.put(id, acc);
-                    System.out.println("Account created.");
+                    System.out.println("\nAccount created.");
                 }
             } else if (choice == 2) {
-                System.out.print("Enter account id: ");
+                System.out.print("\nEnter account id: ");
                 String id = scanner.nextLine();
                 Account acc = accounts.get(id);
                 if (acc == null) {
-                    System.out.println("Account does not exist.");
+                    System.out.println("\nAccount does not exist.");
                 } else {
                     System.out.print("Enter password: ");
                     String password = scanner.nextLine();
                     if (!acc.checkPassword(password)) {
-                        System.out.println("Incorrect password.");
+                        System.out.println("\nIncorrect password.");
                         continue;
                     }
                     System.out.print("Enter amount to debit: ");
@@ -75,16 +75,16 @@ public class Main {
                     acc.debit(amount);
                 }
             } else if (choice == 3) {
-                System.out.print("Enter account id: ");
+                System.out.print("\nEnter account id: ");
                 String id = scanner.nextLine();
                 Account acc = accounts.get(id);
                 if (acc == null) {
-                    System.out.println("Account does not exist.");
+                    System.out.println("\nAccount does not exist.");
                 } else {
                     System.out.print("Enter password: ");
                     String password = scanner.nextLine();
                     if (!acc.checkPassword(password)) {
-                        System.out.println("Incorrect password.");
+                        System.out.println("\nIncorrect password.");
                         continue;
                     }
                     System.out.print("Enter amount to credit: ");
@@ -93,19 +93,19 @@ public class Main {
                     acc.credit(amount);
                 }
             } else if (choice == 4) {
-                System.out.print("Enter source account id: ");
+                System.out.print("\nEnter source account id: ");
                 String fromId = scanner.nextLine();
                 System.out.print("Enter destination account id: ");
                 String toId = scanner.nextLine();
                 Account from = accounts.get(fromId);
                 Account to = accounts.get(toId);
                 if (from == null || to == null) {
-                    System.out.println("One or both accounts do not exist.");
+                    System.out.println("\nOne or both accounts do not exist.");
                 } else {
                     System.out.print("Enter password: ");
                     String password = scanner.nextLine();
                     if (!from.checkPassword(password)) {
-                        System.out.println("Incorrect password.");
+                        System.out.println("\nIncorrect password.");
                         continue;
                     }
                     System.out.print("Enter amount to transfer: ");
@@ -114,19 +114,19 @@ public class Main {
                     from.transferTo(to, amount);
                 }
             } else if (choice == 5) {
-                System.out.print("Enter account id: ");
+                System.out.print("\nEnter account id: ");
                 String id = scanner.nextLine();
                 Account acc = accounts.get(id);
                 if (acc == null) {
-                    System.out.println("Account does not exist.");
+                    System.out.println("\nAccount does not exist...");
                 } else {
                     System.out.println(acc);
                 }
             } else if (choice == 6) {
-                System.out.println("Exiting...");
+                System.out.println("\nExiting...");
                 break;
             } else {
-                System.out.println("Invalid option...");
+                System.out.println("\nInvalid option...");
             }
         }
     }

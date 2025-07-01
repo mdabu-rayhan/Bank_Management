@@ -20,7 +20,7 @@ public class CurrentAccount extends Account {
         if (var1 > 0.0 && this.getBalance() + this.initialBalance >= var1) {
             return super.debit(var1);
         } else {
-            System.out.println("Amount exceeded balance");
+            System.out.println("\nAmount exceeded balance");
             return this.getBalance();
         }
     }

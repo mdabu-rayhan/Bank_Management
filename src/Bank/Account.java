@@ -53,7 +53,7 @@ public class Account {
         if (var1 > 0.0 && var1 <= this.balance) {
             this.balance -= var1;
         } else {
-            System.out.println("Amount exceeded balance");
+            System.out.println("\nAmount exceeded balance");
         }
 
         return this.balance;
@@ -64,7 +64,7 @@ public class Account {
             this.debit(var2);
             var1.credit(var2);
         } else {
-            System.out.println("Amount exceeded balance");
+            System.out.println("\nAmount exceeded balance");
         }
 
         return this.balance;

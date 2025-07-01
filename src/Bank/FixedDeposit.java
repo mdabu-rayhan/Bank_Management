@@ -32,7 +32,7 @@ public class FixedDeposit extends Account {
         if (var1 > 0.0 && this.getBalance() >= var1 && this.creditCount > 5) {
             return super.debit(var1);
         } else {
-            System.out.println("Amount exceeded balance");
+            System.out.println("\nAmount exceeded balance");
             return this.getBalance();
         }
     }
